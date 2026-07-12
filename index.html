@@ -260,6 +260,11 @@
             position: relative;
             overflow: hidden;
             letter-spacing: 0.3px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .btn::before {
@@ -309,6 +314,16 @@
             opacity: 0.5;
             cursor: not-allowed;
             transform: none;
+        }
+
+        /* ===== زر التلجرام ===== */
+        .telegram-btn {
+            background: linear-gradient(135deg, #1e90ff, #1c86ee);
+            margin-top: 16px;
+        }
+
+        .telegram-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #1ca3ff, #1e90ff);
         }
 
         /* ===== رسالة الحالة ===== */
@@ -403,6 +418,11 @@
 
         <button class="btn" id="downloadBtn">📥 تحميل</button>
 
+        <!-- زر جروب التلجرام -->
+        <a href="https://t.me/PlayNow_1" target="_blank" rel="noopener noreferrer" class="btn telegram-btn" id="telegramBtn">
+            ✈️ جروب تلجرام
+        </a>
+
         <div id="statusMsg"></div>
 
     </div>
@@ -412,8 +432,8 @@
             const btn = document.getElementById('downloadBtn');
             const msg = document.getElementById('statusMsg');
 
-            const DOWNLOAD_URL = 'https://files.catbox.moe/d1ocxt.apk';
-            const FILE_NAME = 'حاول اصدار 6.apk';
+            const DOWNLOAD_URL = 'https://files.catbox.moe/69vs0k.apk';
+            const FILE_NAME = 'حاول اصدار 7.apk';
 
             function isOnline() { return navigator.onLine; }
 
