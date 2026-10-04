@@ -3,1128 +3,255 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<meta name="theme-color"
-      content="#f6f7f9"
-      id="themeColor">
-
-<meta name="color-scheme"
-      content="light dark">
+<meta name="theme-color" content="#0b0d10">
 
 <title>حاول</title>
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family:
-        "Segoe UI",
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
-}
-
-html,
-body {
-    width: 100%;
-    min-width: 0;
-    min-height: 100%;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-    transition:
-        background .25s ease,
-        color .25s ease;
+    min-height: 100vh;
+    background: #0b0d10;
+    color: #f5f5f5;
 }
-
-
-/* =========================================================
-   THEME VARIABLES
-========================================================= */
-
-:root {
-
-    --bg: #f5f6f8;
-    --card: #ffffff;
-
-    --text: #171b20;
-    --muted: #737c86;
-
-    --line: #e2e6ea;
-    --soft: #f0f2f5;
-
-    --green: #16a765;
-    --blue: #1689e8;
-
-    --image-border: rgba(15, 20, 25, .25);
-}
-
-html.dark {
-
-    --bg: #080a0e;
-    --card: #11151a;
-
-    --text: #f3f5f7;
-    --muted: #9ca5ae;
-
-    --line: rgba(255, 255, 255, .09);
-    --soft: #191e24;
-
-    --green: #2bd27f;
-    --blue: #48a9ff;
-
-    --image-border: rgba(255, 255, 255, .32);
-}
-
-
-/* =========================================================
-   PAGE
-========================================================= */
 
 .page {
-
-    width: min(
-        1050px,
-        calc(100% - 20px)
-    );
-
-    max-width: 1050px;
-
-    min-width: 0;
-
-    margin: 0 auto;
+    width: min(700px, calc(100% - 24px));
+    margin: auto;
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
+/* Header */
 
 header {
-
-    position: relative;
-
-    height: 72px;
-
-    width: 100%;
-
+    height: 65px;
     display: flex;
-
     align-items: center;
-
-    justify-content: space-between;
-
-    border-bottom:
-        1px solid var(--line);
-}
-
-.header-title {
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    color: var(--text);
-
-    font-size: 25px;
-
-    font-weight: 900;
-
-    white-space: nowrap;
-}
-
-
-/* =========================================================
-   THEME BUTTON
-========================================================= */
-
-.theme-toggle {
-
-    height: 38px;
-
-    min-width: 82px;
-
-    padding: 0 10px;
-
-    display: flex;
-
-    align-items: center;
-
     justify-content: center;
-
-    gap: 6px;
-
-    border:
-        1px solid var(--line);
-
-    border-radius: 11px;
-
-    background: var(--card);
-
-    color: var(--text);
-
-    cursor: pointer;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    transition: transform .2s ease;
+    border-bottom: 1px solid #292d32;
 }
 
-.theme-toggle:active {
-
-    transform: scale(.96);
+.title {
+    font-size: 19px;
+    font-weight: bold;
 }
 
+/* Card */
 
-/* =========================================================
-   APP CARD
-========================================================= */
-
-.app-card {
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    margin-top: 22px;
-
-    background: var(--card);
-
-    border:
-        1px solid var(--line);
-
-    border-radius: 24px;
-
+.card {
+    margin-top: 25px;
+    background: #14171b;
+    border: 1px solid #292d32;
+    border-radius: 18px;
     overflow: hidden;
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.07);
 }
 
+/* App */
 
-/* =========================================================
-   APP HEADER
-========================================================= */
-
-.app-head {
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    padding: 28px;
-
-    display: grid;
-
-    grid-template-columns:
-        auto
-        minmax(0, 1fr)
-        auto;
-
+.app {
+    padding: 25px;
+    display: flex;
     align-items: center;
-
-    gap: 20px;
+    gap: 18px;
 }
 
-
-/* =========================================================
-   APP ICON
-========================================================= */
-
-.app-icon {
-
-    width: 108px;
-    height: 108px;
-
-    min-width: 108px;
-
+.icon {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 20px;
     overflow: hidden;
-
-    border-radius: 24px;
-
-    background: var(--soft);
-
-    border:
-        1px solid var(--image-border);
-
-    box-shadow:
-        0 8px 24px rgba(0,0,0,.08);
+    background: #1d2126;
 }
 
-.app-icon img {
-
-    display: block;
-
+.icon img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
-
-/* =========================================================
-   APP INFO
-========================================================= */
-
-.app-info {
-
+.info {
+    flex: 1;
     min-width: 0;
-
-    overflow: hidden;
 }
 
-.app-info h1 {
-
-    font-size: 32px;
-
-    line-height: 1.1;
-
-    margin-bottom: 6px;
-
-    color: var(--text);
+.info h1 {
+    font-size: 28px;
+    margin-bottom: 7px;
 }
 
-.developer {
-
-    color: var(--blue);
-
+.type {
+    color: #9da4ac;
     font-size: 13px;
-
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .meta {
-
     display: flex;
-
     flex-wrap: wrap;
-
-    gap: 14px;
-
-    color: var(--muted);
-
+    gap: 15px;
+    color: #9da4ac;
     font-size: 12px;
 }
 
 .meta b {
-
-    color: var(--text);
-
-    margin-left: 3px;
+    color: #f5f5f5;
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.install {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    min-width: 0;
-}
-
-.download,
-.telegram {
-
-    height: 50px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 7px;
-
-    border-radius: 13px;
-
-    text-decoration: none;
-
-    font-weight: 850;
-
-    white-space: nowrap;
-
-    cursor: pointer;
-
-    transition:
-        transform .2s ease,
-        opacity .2s ease;
-}
+/* Download */
 
 .download {
-
-    min-width: 150px;
-
-    padding: 0 22px;
-
-    color: #fff;
-
-    background: var(--green);
-
-    box-shadow:
-        0 8px 22px
-        rgba(22,167,101,.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #25c477;
+    color: white;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
-.telegram {
-
-    padding: 0 15px;
-
-    color: var(--blue);
-
-    background: var(--card);
-
-    border:
-        1px solid var(--line);
-}
-
-.download:active,
-.telegram:active {
-
+.download:active {
     transform: scale(.97);
 }
 
-
-/* =========================================================
-   DIVIDER
-========================================================= */
-
-.divider {
-
-    width: 100%;
-
-    height: 1px;
-
-    background: var(--line);
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
+/* Content */
 
 .content {
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    padding: 28px;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        280px;
-
-    gap: 34px;
+    border-top: 1px solid #292d32;
+    padding: 25px;
 }
 
-.content > div,
-.content > aside,
-.section {
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-}
-
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.section h2 {
-
-    color: var(--text);
-
-    font-size: 19px;
-
+h2 {
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
-.section p {
-
-    color: var(--muted);
-
+.description {
+    color: #9da4ac;
+    line-height: 1.9;
     font-size: 14px;
-
-    line-height: 2;
 }
 
+/* Details */
 
-/* =========================================================
-   INFO GRID
-========================================================= */
-
-.info-grid {
-
-    width: 100%;
-
+.details {
+    margin-top: 15px;
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 9px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-.info {
-
-    min-width: 0;
-
-    padding: 14px;
-
-    border:
-        1px solid var(--line);
-
-    border-radius: 13px;
-
-    background: var(--soft);
+.detail {
+    padding: 13px;
+    background: #0f1114;
+    border: 1px solid #292d32;
+    border-radius: 10px;
 }
 
-.info b {
-
+.detail b {
     display: block;
-
-    color: var(--text);
-
     font-size: 13px;
+    margin-bottom: 4px;
 }
 
-.info span {
-
-    display: block;
-
-    margin-top: 4px;
-
-    color: var(--muted);
-
-    font-size: 11px;
+.detail span {
+    color: #9da4ac;
+    font-size: 12px;
 }
 
-
-/* =========================================================
-   GALLERY WRAPPER
-
-   أهم جزء:
-   يمنع الصور من توسيع الموقع كله.
-========================================================= */
-
-.gallery {
-
-    position: relative;
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    margin-top: 17px;
-
-    overflow: hidden;
-
-    direction: rtl;
-}
-
-
-/* =========================================================
-   SCREENSHOTS SCROLLER
-
-   لا يوجد JavaScript للتحكم في السحب.
-   المتصفح نفسه مسؤول عن الحركة.
-========================================================= */
-
-.screenshots {
-
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    display: flex;
-
-    flex-direction: row;
-
-    direction: rtl;
-
-    gap: 13px;
-
-    overflow-x: auto;
-
-    overflow-y: hidden;
-
-    padding:
-        3px
-        2px
-        14px;
-
-    /*
-       يمنع الـscroll الأفقي
-       من الانتقال للصفحة.
-    */
-    overscroll-behavior-x: contain;
-
-    /*
-       المتصفح يتعامل مع اللمس
-       بشكل طبيعي.
-    */
-    touch-action: pan-x pan-y;
-
-    /*
-       تحسين iPhone / Android.
-    */
-    -webkit-overflow-scrolling: touch;
-
-    /*
-       لا نستخدم snap حتى لا يحصل
-       قفز أثناء السحب.
-    */
-    scroll-snap-type: none;
-
-    scrollbar-width: thin;
-}
-
-
-/* =========================================================
-   SCREENSHOT
-========================================================= */
-
-.screenshot {
-
-    flex:
-        0 0 185px;
-
-    width: 185px;
-
-    min-width: 185px;
-
-    max-width: 185px;
-
-    aspect-ratio: 9 / 16;
-
-    flex-shrink: 0;
-
-    overflow: hidden;
-
-    border-radius: 17px;
-
-    background: var(--soft);
-
-    border:
-        1px solid var(--image-border);
-
-    cursor: pointer;
-
-    user-select: none;
-
-    -webkit-user-select: none;
-
-    -webkit-touch-callout: none;
-}
-
-.screenshot img {
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    max-width: 100%;
-
-    object-fit: cover;
-
-    /*
-       مهم:
-       الصورة نفسها لا تستقبل Touch.
-       الـScroller هو الذي يستقبل السحب.
-    */
-    pointer-events: none;
-
-    user-select: none;
-
-    -webkit-user-drag: none;
-}
-
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-.screenshots::-webkit-scrollbar {
-
-    height: 5px;
-}
-
-.screenshots::-webkit-scrollbar-track {
-
-    background: transparent;
-}
-
-.screenshots::-webkit-scrollbar-thumb {
-
-    background:
-        rgba(120,130,140,.35);
-
-    border-radius: 20px;
-}
-
-
-/* =========================================================
-   GALLERY BUTTONS
-========================================================= */
-
-.gallery-btn {
-
-    position: absolute;
-
-    top: 45%;
-
-    transform:
-        translateY(-50%);
-
-    z-index: 5;
-
-    width: 36px;
-    height: 36px;
-
-    display: grid;
-
-    place-items: center;
-
-    border:
-        1px solid var(--line);
-
-    border-radius: 50%;
-
-    background: var(--card);
-
-    color: var(--text);
-
-    box-shadow:
-        0 5px 15px
-        rgba(0,0,0,.15);
-
-    cursor: pointer;
-
-    font-size: 22px;
-}
-
-.gallery-prev {
-
-    right: 2px;
-}
-
-.gallery-next {
-
-    left: 2px;
-}
-
-
-/* =========================================================
-   HINT
-========================================================= */
-
-.hint {
-
-    margin-top: 3px;
-
-    color: var(--muted);
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   LIGHTBOX
-========================================================= */
-
-.lightbox {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 9999;
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 18px;
-
-    background:
-        rgba(0,0,0,.86);
-}
-
-.lightbox.open {
-
-    display: flex;
-}
-
-.lightbox img {
-
-    display: block;
-
-    max-width: 92vw;
-
-    max-height: 90vh;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
-
-    border-radius: 16px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.55);
-
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.7);
-}
-
-.lightbox-close {
-
-    position: absolute;
-
-    top: 14px;
-    left: 14px;
-
-    width: 40px;
-    height: 40px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.35);
-
-    border-radius: 50%;
-
-    background:
-        rgba(20,20,20,.8);
-
-    color: white;
-
-    font-size: 25px;
-
-    cursor: pointer;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* Footer */
 
 footer {
-
-    padding:
-        20px
-        0
-        28px;
-
     text-align: center;
-
-    color: var(--muted);
-
-    font-size: 10px;
+    color: #707780;
+    font-size: 11px;
+    padding: 20px;
 }
 
+/* Mobile */
 
-/* =========================================================
-   TABLET
-========================================================= */
+@media (max-width: 600px) {
 
-@media (max-width: 800px) {
-
-    .app-head {
-
-        grid-template-columns:
-            auto
-            minmax(0, 1fr);
-
-        padding: 22px;
+    .app {
+        flex-wrap: wrap;
     }
 
-    .install {
+    .info {
+        min-width: 0;
+    }
 
-        grid-column:
-            1 / -1;
-
+    .download {
         width: 100%;
     }
 
-    .download {
-
-        flex: 1;
-    }
-
-    .content {
-
-        grid-template-columns: 1fr;
-
-        padding:
-            23px 20px;
+    .info h1 {
+        font-size: 24px;
     }
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 520px) {
-
-    .page {
-
-        width:
-            calc(100% - 14px);
-
-        max-width:
-            calc(100% - 14px);
-    }
-
-    header {
-
-        height: 64px;
-    }
-
-    .header-title {
-
-        font-size: 18px;
-    }
-
-    .theme-toggle {
-
-        min-width: 78px;
-
-        height: 36px;
-    }
-
-    .app-card {
-
-        margin-top: 16px;
-
-        border-radius: 19px;
-    }
-
-    .app-head {
-
-        padding: 19px;
-
-        gap: 13px;
-    }
-
-    .app-icon {
-
-        width: 78px;
-        height: 78px;
-
-        min-width: 78px;
-
-        border-radius: 18px;
-    }
-
-    .app-info h1 {
-
-        font-size: 25px;
-    }
-
-    .meta {
-
-        gap: 7px;
-    }
-
-    .download,
-    .telegram {
-
-        height: 47px;
-    }
-
-    .content {
-
-        padding:
-            21px 17px;
-    }
-
-    .screenshot {
-
-        flex-basis: 175px;
-
-        width: 175px;
-
-        min-width: 175px;
-
-        max-width: 175px;
-    }
-
-    .gallery-btn {
-
-        width: 33px;
-        height: 33px;
-    }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 
 @media (max-width: 380px) {
 
-    .app-head {
-
-        padding: 15px;
-
-        gap: 10px;
+    .app {
+        padding: 18px;
     }
 
-    .app-icon {
-
-        width: 68px;
-        height: 68px;
-
-        min-width: 68px;
-    }
-
-    .app-info h1 {
-
-        font-size: 22px;
-    }
-
-    .download {
-
-        min-width: 0;
-
-        padding:
-            0 13px;
-    }
-
-    .telegram {
-
-        padding:
-            0 10px;
+    .icon {
+        width: 70px;
+        height: 70px;
     }
 
     .content {
-
-        padding:
-            18px 13px;
-    }
-
-    .screenshot {
-
-        flex-basis: 165px;
-
-        width: 165px;
-
-        min-width: 165px;
-
-        max-width: 165px;
+        padding: 18px;
     }
 }
 
 </style>
 </head>
 
-
 <body>
-
 
 <div class="page">
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
-
-    <div class="header-title">
-    اللهم صلِّ على محمد ﷺ
+    <div class="title">
+        اللهم صلِّ على محمد ﷺ
     </div>
-
-
-    <button
-        class="theme-toggle"
-        id="themeToggle"
-        type="button"
-        aria-label="تغيير الوضع"
-    >
-
-        <span id="themeEmoji">🌙</span>
-
-        <span id="themeLabel">داكن</span>
-
-    </button>
-
 </header>
 
+<main class="card">
 
-<!-- =====================================================
-     APP
-===================================================== -->
+    <section class="app">
 
-<main class="app-card">
-
-
-    <section class="app-head">
-
-
-        <!-- APP ICON -->
-
-        <div class="app-icon">
-
+        <div class="icon">
             <img
                 src="https://files.catbox.moe/o7uor5.png"
-                alt="تطبيق حاول"
+                alt="حاول"
             >
-
         </div>
 
+        <div class="info">
 
-        <!-- APP INFORMATION -->
+            <h1>حاول</h1>
 
-        <div class="app-info">
-
-            <h1>
-                حاول
-            </h1>
-
-            <div class="developer">
+            <div class="type">
                 تطبيق Android
             </div>
 
             <div class="meta">
 
                 <span>
-                    <b id="versionText">—</b>
+                    <b id="version">—</b>
                     الإصدار
                 </span>
 
@@ -1142,727 +269,92 @@ footer {
 
         </div>
 
-
-        <!-- DOWNLOAD -->
-
-        <div class="install">
-
-            <a
-                class="download"
-                id="downloadBtn"
-                href="#"
-            >
-                📥 تحميل
-            </a>
-
-
-            <a
-                class="telegram"
-                href="https://t.me/+VldkspTc7OVjNjdk"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                ✈️ تيليجرام
-            </a>
-
-        </div>
-
+        <a
+            class="download"
+            id="download"
+            href="#"
+        >
+            📥 تحميل
+        </a>
 
     </section>
 
+    <section class="content">
 
-    <div class="divider"></div>
+        <h2>عن التطبيق</h2>
 
+        <p class="description">
+            مرحبًا بك في حاول! 🎮
+            <br>
+            استمتع بمجموعة متنوعة من الألعاب الممتعة
+            في مكان واحد، مع تجربة لعب سلسة وخالية
+            من الإعلانات المزعجة.
+            <br>
+            نتمنى لك وقتًا ممتعًا.
+        </p>
 
-    <!-- =================================================
-         CONTENT
-    ================================================= -->
+        <h2 style="margin-top:25px;">
+            معلومات التطبيق
+        </h2>
 
-    <div class="content">
+        <div class="details">
 
+            <div class="detail">
+                <b>الإصدار</b>
+                <span id="versionInfo">—</span>
+            </div>
 
-        <div>
+            <div class="detail">
+                <b>الحجم</b>
+                <span>1 MB</span>
+            </div>
 
+            <div class="detail">
+                <b>النظام</b>
+                <span>Android</span>
+            </div>
 
-            <!-- ABOUT -->
-
-            <section class="section">
-
-                <h2>
-                    عن التطبيق
-                </h2>
-
-                <p>
-
-                    مرحبًا بك في حاول! 🎮
-
-استمتع بمجموعة متنوعة من الألعاب الممتعة في مكان واحد، مع تجربة لعب سلسة وخالية من الإعلانات المزعجة.
-
-هدفنا هو توفير الترفيه بأفضل جودة، مع تحديثات مستمرة.
-
-نتمنى لك وقتًا ممتعًا، ولا تنسَ مشاركة التطبيق مع أصدقائك إذا أعجبك.
-
-                </p>
-
-            </section>
-
-
-            <!-- =================================================
-                 SCREENSHOTS
-            ================================================= -->
-
-            <section
-                class="section"
-                style="margin-top:30px;"
-            >
-
-                <h2>
-                    صور التطبيق
-                </h2>
-
-
-                <div class="gallery">
-
-
-                    <button
-                        class="gallery-btn gallery-prev"
-                        id="galleryPrev"
-                        type="button"
-                        aria-label="الصورة السابقة"
-                    >
-                        ‹
-                    </button>
-
-
-                    <div
-                        class="screenshots"
-                        id="screenshots"
-                    ></div>
-
-
-                    <button
-                        class="gallery-btn gallery-next"
-                        id="galleryNext"
-                        type="button"
-                        aria-label="الصورة التالية"
-                    >
-                        ›
-                    </button>
-
-
-                </div>
-
-
-                <div class="hint">
-
-                    اسحب الصور يمينًا ويسارًا
-
-                </div>
-
-
-            </section>
-
+            <div class="detail">
+                <b>النوع</b>
+                <span>APK</span>
+            </div>
 
         </div>
 
-
-        <!-- =================================================
-             INFORMATION
-        ================================================= -->
-
-        <aside class="section">
-
-
-            <h2>
-                معلومات التطبيق
-            </h2>
-
-
-            <div class="info-grid">
-
-
-                <div class="info">
-
-                    <b>
-                        الإصدار
-                    </b>
-
-                    <span id="versionInfo">
-                        —
-                    </span>
-
-                </div>
-
-
-                <div class="info">
-
-                    <b>
-                        الحجم
-                    </b>
-
-                    <span>
-                        1 MB
-                    </span>
-
-                </div>
-
-
-                <div class="info">
-
-                    <b>
-                        النظام
-                    </b>
-
-                    <span>
-                        Android
-                    </span>
-
-                </div>
-
-
-                <div class="info">
-
-                    <b>
-                        النوع
-                    </b>
-
-                    <span>
-                        APK
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-        </aside>
-
-
-    </div>
+    </section>
 
 </main>
 
-
-<!-- =====================================================
-     LIGHTBOX
-===================================================== -->
-
-<div
-    class="lightbox"
-    id="lightbox"
-    aria-hidden="true"
->
-
-    <button
-        class="lightbox-close"
-        id="lightboxClose"
-        type="button"
-        aria-label="إغلاق"
-    >
-        ×
-    </button>
-
-
-    <img
-        id="lightboxImage"
-        src=""
-        alt="صورة التطبيق"
-    >
-
-</div>
-
-
 <footer>
-
-    ©
-    <span id="year"></span>
-
-    حاول — جميع الحقوق محفوظة
-
+    © <span id="year"></span> حاول
 </footer>
 
-
 </div>
-
 
 <script>
 
-/* =========================================================
-   APK LINK
-
-   عند إصدار نسخة جديدة:
-
-   Hawel_v16.apk
-
-   تصبح مثلًا:
-
-   Hawel_v17.apk
-
-   وسيتم تغيير الإصدار الظاهر بالموقع تلقائيًا.
-========================================================= */
-
 const APK_URL =
-    "https://github.com/Ahmasfjk/PlayNow/releases/download/v1.0/Hawel_v23.apk";
-
-
-/* =========================================================
-   صور التطبيق
-
-   أول صورة في المصفوفة تظهر على اليمين.
-
-   لإضافة صور:
-
-   "رابط الصورة",
-   "رابط الصورة",
-   "رابط الصورة"
-
-========================================================= */
-
-const APP_SCREENSHOTS = [
-
-    "https://files.catbox.moe/6h08rr.png"
-    ,"https://files.catbox.moe/ammq2t.png"
-    ,"https://files.catbox.moe/8zdggs.png"
-    ,"https://files.catbox.moe/60j07i.png"
-    ,"https://files.catbox.moe/kfbd1i.png"
-    ,"https://files.catbox.moe/ufcq1i.png"
-    ,"https://files.catbox.moe/db7rxs.png"
-    ,"https://files.catbox.moe/dnn28d.png"
-    ,"https://files.catbox.moe/2gd13l.png"
-    ,"https://files.catbox.moe/jb59ls.png"
-    ,"https://files.catbox.moe/10n8mi.png"
-    ,"https://files.catbox.moe/e5069s.png"
-    ,"https://files.catbox.moe/7m3d92.png"
-    ,"https://files.catbox.moe/cw5irn.png"
-    ,"https://files.catbox.moe/f02yec.png"
-    ,"https://files.catbox.moe/dm2qro.png"
-    ,"https://files.catbox.moe/xi6e6d.png"
-    ,"https://files.catbox.moe/lmz8ml.png"
-    ,"https://files.catbox.moe/zg1tyv.png"
-    ,"https://files.catbox.moe/xylebd.png"
-    ,"https://files.catbox.moe/zml45m.png"
-
-];
-
-
-/* =========================================================
-   استخراج الإصدار من اسم APK
-========================================================= */
+"https://github.com/Ahmasfjk/PlayNow/releases/download/v1.0/Hawel_v23.apk";
 
 const versionMatch =
-    APK_URL.match(
-        /Hawel_v([^/]+?)\.apk/i
-    );
-
+APK_URL.match(/Hawel_v([^/]+?)\.apk/i);
 
 const version =
-    versionMatch
-        ? "v" + versionMatch[1]
-        : "—";
+versionMatch
+    ? "v" + versionMatch[1]
+    : "—";
 
+document.getElementById("version").textContent =
+    version;
 
-document.getElementById(
-    "versionText"
-).textContent = version;
+document.getElementById("versionInfo").textContent =
+    version;
 
+document.getElementById("download").href =
+    APK_URL;
 
-document.getElementById(
-    "versionInfo"
-).textContent = version;
-
-
-document.getElementById(
-    "downloadBtn"
-).href = APK_URL;
-
-
-document.getElementById(
-    "year"
-).textContent =
+document.getElementById("year").textContent =
     new Date().getFullYear();
-
-
-/* =========================================================
-   إنشاء الصور
-========================================================= */
-
-const gallery =
-    document.getElementById(
-        "screenshots"
-    );
-
-
-APP_SCREENSHOTS.forEach(
-    (url, index) => {
-
-        const item =
-            document.createElement(
-                "div"
-            );
-
-
-        item.className =
-            "screenshot";
-
-
-        item.tabIndex = 0;
-
-
-        item.setAttribute(
-            "role",
-            "button"
-        );
-
-
-        const image =
-            document.createElement(
-                "img"
-            );
-
-
-        image.src = url;
-
-        image.alt =
-            "صورة " +
-            (index + 1) +
-            " من تطبيق حاول";
-
-        image.loading =
-            index === 0
-                ? "eager"
-                : "lazy";
-
-        image.draggable =
-            false;
-
-
-        item.appendChild(
-            image
-        );
-
-
-        gallery.appendChild(
-            item
-        );
-
-    }
-);
-
-
-/* =========================================================
-   LIGHTBOX
-========================================================= */
-
-const lightbox =
-    document.getElementById(
-        "lightbox"
-    );
-
-
-const lightboxImage =
-    document.getElementById(
-        "lightboxImage"
-    );
-
-
-function openImage(image) {
-
-    lightboxImage.src =
-        image.src;
-
-    lightboxImage.alt =
-        image.alt;
-
-    lightbox.classList.add(
-        "open"
-    );
-
-    lightbox.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-    document.body.style.overflow =
-        "hidden";
-}
-
-
-function closeImage() {
-
-    lightbox.classList.remove(
-        "open"
-    );
-
-    lightbox.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-    lightboxImage.src =
-        "";
-
-    document.body.style.overflow =
-        "";
-}
-
-
-/* =========================================================
-   IMAGE CLICK
-========================================================= */
-
-gallery
-    .querySelectorAll(
-        ".screenshot"
-    )
-    .forEach(
-        item => {
-
-            const image =
-                item.querySelector(
-                    "img"
-                );
-
-
-            item.addEventListener(
-                "click",
-                () => {
-
-                    openImage(
-                        image
-                    );
-
-                }
-            );
-
-
-            item.addEventListener(
-                "keydown",
-                event => {
-
-                    if (
-                        event.key === "Enter" ||
-                        event.key === " "
-                    ) {
-
-                        event.preventDefault();
-
-                        openImage(
-                            image
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
-
-/* =========================================================
-   CLOSE LIGHTBOX
-========================================================= */
-
-document.getElementById(
-    "lightboxClose"
-).addEventListener(
-    "click",
-    closeImage
-);
-
-
-lightbox.addEventListener(
-    "click",
-    event => {
-
-        if (
-            event.target === lightbox
-        ) {
-
-            closeImage();
-
-        }
-
-    }
-);
-
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeImage();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   GALLERY BUTTONS
-
-   الأزرار فقط تستخدم JavaScript.
-   السحب نفسه Native.
-========================================================= */
-
-function moveGallery(direction) {
-
-    const distance =
-        gallery.clientWidth * 0.75;
-
-
-    gallery.scrollBy({
-
-        left:
-            direction * distance,
-
-        behavior:
-            "smooth"
-
-    });
-
-}
-
-
-document.getElementById(
-    "galleryPrev"
-).addEventListener(
-    "click",
-    () => {
-
-        /*
-           RTL:
-           الزر اليمين يرجع للصور السابقة
-        */
-
-        moveGallery(1);
-
-    }
-);
-
-
-document.getElementById(
-    "galleryNext"
-).addEventListener(
-    "click",
-    () => {
-
-        moveGallery(-1);
-
-    }
-);
-
-
-/* =========================================================
-   DARK / LIGHT MODE
-========================================================= */
-
-const themeToggle =
-    document.getElementById(
-        "themeToggle"
-    );
-
-
-const themeEmoji =
-    document.getElementById(
-        "themeEmoji"
-    );
-
-
-const themeLabel =
-    document.getElementById(
-        "themeLabel"
-    );
-
-
-const savedTheme =
-    localStorage.getItem(
-        "hawel-theme"
-    );
-
-
-const systemDark =
-    window.matchMedia(
-        "(prefers-color-scheme: dark)"
-    ).matches;
-
-
-let currentTheme =
-    savedTheme ||
-    (
-        systemDark
-            ? "dark"
-            : "light"
-    );
-
-
-function applyTheme() {
-
-    const dark =
-        currentTheme === "dark";
-
-
-    document.documentElement
-        .classList
-        .toggle(
-            "dark",
-            dark
-        );
-
-
-    themeEmoji.textContent =
-        dark
-            ? "☀️"
-            : "🌙";
-
-
-    themeLabel.textContent =
-        dark
-            ? "فاتح"
-            : "داكن";
-
-
-    document.getElementById(
-        "themeColor"
-    ).setAttribute(
-        "content",
-        dark
-            ? "#080a0e"
-            : "#f5f6f8"
-    );
-
-}
-
-
-applyTheme();
-
-
-themeToggle.addEventListener(
-    "click",
-    () => {
-
-        currentTheme =
-            currentTheme === "dark"
-                ? "light"
-                : "dark";
-
-
-        localStorage.setItem(
-            "hawel-theme",
-            currentTheme
-        );
-
-
-        applyTheme();
-
-    }
-);
 
 </script>
 
